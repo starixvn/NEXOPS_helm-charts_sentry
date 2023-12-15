@@ -62,7 +62,7 @@ relay:
   resources: {}
   affinity: {}
   nodeSelector:
-    sentry: "yes"
+    sentry: "yes": {}
   securityContext: {}
   containerSecurityContext: {}
   service:
@@ -108,7 +108,7 @@ sentry:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     service:
@@ -140,7 +140,7 @@ sentry:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     # tolerations: []
     # podLabels: []
 
@@ -167,7 +167,7 @@ sentry:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -195,7 +195,7 @@ sentry:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -223,7 +223,7 @@ sentry:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -250,7 +250,7 @@ sentry:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -276,7 +276,7 @@ sentry:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -303,7 +303,7 @@ sentry:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -330,7 +330,7 @@ sentry:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     # tolerations: []
     # podLabels: []
     sidecars: []
@@ -343,7 +343,7 @@ sentry:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -359,7 +359,7 @@ sentry:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -375,7 +375,7 @@ sentry:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -391,7 +391,7 @@ sentry:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -406,7 +406,7 @@ sentry:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -448,7 +448,7 @@ snuba:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     service:
@@ -471,7 +471,7 @@ snuba:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -500,7 +500,7 @@ snuba:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -529,7 +529,7 @@ snuba:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -547,7 +547,7 @@ snuba:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -562,7 +562,7 @@ snuba:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -577,7 +577,7 @@ snuba:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -595,7 +595,7 @@ snuba:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -624,7 +624,7 @@ snuba:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -653,7 +653,7 @@ snuba:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -704,7 +704,7 @@ hooks:
         memory: 64Mi
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -724,7 +724,7 @@ hooks:
     volumes: []
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     # tolerations: []
     # volumes: []
     # volumeMounts: []
@@ -740,7 +740,7 @@ hooks:
         memory: 1Gi
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     # tolerations: []
     # volumes: []
     # volumeMounts: []
@@ -781,7 +781,7 @@ symbolicator:
     resources: {}
     affinity: {}
     nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
     securityContext: {}
     containerSecurityContext: {}
     # tolerations: []
@@ -983,7 +983,7 @@ config:
     httpKeepalive: 15
 
 clickhouse:
-  enabled: false
+  enabled: true
   clickhouse:
     imageVersion: "21.8.13.6"
     configmap:
@@ -1049,14 +1049,14 @@ externalClickhouse:
 # Settings for Zookeeper.
 # See https://github.com/bitnami/charts/tree/master/bitnami/zookeeper
 zookeeper:
-  enabled: false
+  enabled: true
   nameOverride: zookeeper-clickhouse
   replicaCount: 3
 
 # Settings for Kafka.
 # See https://github.com/bitnami/charts/tree/master/bitnami/kafka
-zookeeper:
-  enabled: false
+kafka:
+  enabled: true
   replicaCount: 3
   allowPlaintextListener: true
   defaultReplicationFactor: 3
@@ -1275,7 +1275,7 @@ metrics:
   #     memory: 100Mi
 
   nodeSelector:
-      sentry: "yes"
+      sentry: "yes": {}
   tolerations: []
   affinity: {}
   securityContext: {}
