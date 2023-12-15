@@ -927,7 +927,7 @@ filestore:
     ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
     ##
     persistence:
-      enabled: false
+      enabled: true
       ## database data Persistent Volume Storage Class
       ## If defined, storageClassName: <storageClass>
       ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -935,7 +935,7 @@ filestore:
       ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
       ##   GKE, AWS & OpenStack)
       ##
-      # storageClass: "-"
+      storageClass: "-"
       accessMode: ReadWriteOnce
       size: 10Gi
 
@@ -1011,7 +1011,7 @@ clickhouse:
               quota: default
 
     persistentVolumeClaim:
-      enabled: true
+      enabled: false
       dataPersistentVolume:
         enabled: true
         accessModes:
