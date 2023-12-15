@@ -984,7 +984,7 @@ config:
     httpKeepalive: 15
 
 clickhouse:
-  enabled: true
+  enabled: false
   clickhouse:
     imageVersion: "21.8.13.6"
     configmap:
@@ -1014,7 +1014,7 @@ clickhouse:
     persistentVolumeClaim:
       enabled: false
       dataPersistentVolume:
-        enabled: true
+        enabled: false
         accessModes:
           - "ReadWriteOnce"
         storage: "30Gi"
