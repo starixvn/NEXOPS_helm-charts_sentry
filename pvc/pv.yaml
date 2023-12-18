@@ -63,6 +63,9 @@ spec:
       containers:
       - name: mysql
         image: mysql:8.0
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: mypwd
         volumeMounts:
         - name: db-data
           mountPath: "/var/www/mysql/data"
