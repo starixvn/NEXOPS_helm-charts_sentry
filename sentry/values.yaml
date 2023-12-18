@@ -952,7 +952,7 @@ filestore:
 
       ## If existingClaim is specified, no PVC will be created and this claim will
       ## be used
-      existingClaim: ""
+      existingClaim: "sentry-data-pvc"
 
   gcs: {}
     ## Point this at a pre-configured secret containing a service account. The resulting
