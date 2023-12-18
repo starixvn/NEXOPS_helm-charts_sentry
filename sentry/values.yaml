@@ -1057,7 +1057,7 @@ zookeeper:
 # Settings for Kafka.
 # See https://github.com/bitnami/charts/tree/master/bitnami/kafka
 kafka:
-  enabled: false
+  enabled: true
   replicaCount: 3
   allowPlaintextListener: true
   defaultReplicationFactor: 3
