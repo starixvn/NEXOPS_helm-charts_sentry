@@ -12,7 +12,22 @@ spec:
   hostPath:
     path: "/var/www/sentry/data"
   capacity:
-    storage: 10Gi
+    storage: 20Gi
+  accessModes:
+  - ReadWriteMany
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name:  sentry-data-pvc
+  namespace: sentry
+spec:
+  resources:
+    requests:
+      storage: 5Gi
+  volumeMode: Filesystem
+  volumeName: sentry-data-pv
   accessModes:
   - ReadWriteMany
 
