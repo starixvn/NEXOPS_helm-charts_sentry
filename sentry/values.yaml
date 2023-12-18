@@ -1050,14 +1050,14 @@ externalClickhouse:
 # Settings for Zookeeper.
 # See https://github.com/bitnami/charts/tree/master/bitnami/zookeeper
 zookeeper:
-  enabled: true
+  enabled: false
   nameOverride: zookeeper-clickhouse
   replicaCount: 3
 
 # Settings for Kafka.
 # See https://github.com/bitnami/charts/tree/master/bitnami/kafka
 kafka:
-  enabled: true
+  enabled: false
   replicaCount: 3
   allowPlaintextListener: true
   defaultReplicationFactor: 3
@@ -1163,7 +1163,7 @@ externalPostgresql:
 
 rabbitmq:
   ## If disabled, Redis will be used instead as the broker.
-  enabled: true
+  enabled: false
   vhost: /
   clustering:
     forceBoot: true
