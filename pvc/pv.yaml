@@ -68,7 +68,7 @@ spec:
           value: mypwd
         volumeMounts:
         - name: db-data
-          mountPath: "/var/www/mysql/data"
+          mountPath: "/valib/mysql"
       volumes:
       - name: db-data
         persistentVolumeClaim:
