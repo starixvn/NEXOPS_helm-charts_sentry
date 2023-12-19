@@ -1,90 +1,86 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name:  sentry
-##Redis
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name:  sentry-redis-pv
-spec:
-  hostPath:
-    path: "/var/www/sentry/redis"
-  capacity:
-    storage: 20Gi
-  accessModes:
-  - ReadWriteOnce
+# ##Redis
+# ---
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name:  sentry-redis-pv
+# spec:
+#   hostPath:
+#     path: "/var/www/sentry/redis"
+#   capacity:
+#     storage: 20Gi
+#   accessModes:
+#   - ReadWriteOnce
 
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name:  sentry-redis-pvc
-  namespace: sentry
-spec:
-  resources:
-    requests:
-      storage: 5Gi
-  volumeMode: Filesystem
-  volumeName: sentry-redis-pv
-  accessModes:
-  - ReadWriteOnce
-##postgresql
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name:  sentry-postgresql-pv
-spec:
-  hostPath:
-    path: "/var/www/sentry/postgresql"
-  capacity:
-    storage: 20Gi
-  accessModes:
-  - ReadWriteOnce
+# ---
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name:  sentry-redis-pvc
+#   namespace: sentry
+# spec:
+#   resources:
+#     requests:
+#       storage: 5Gi
+#   volumeMode: Filesystem
+#   volumeName: sentry-redis-pv
+#   accessModes:
+#   - ReadWriteOnce
+# ##postgresql
+# ---
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name:  sentry-postgresql-pv
+# spec:
+#   hostPath:
+#     path: "/var/www/sentry/postgresql"
+#   capacity:
+#     storage: 20Gi
+#   accessModes:
+#   - ReadWriteOnce
 
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name:  sentry-postgresql-pvc
-  namespace: sentry
-spec:
-  resources:
-    requests:
-      storage: 5Gi
-  volumeMode: Filesystem
-  volumeName: sentry-postgresql-pv
-  accessModes:
-  - ReadWriteOnce
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name:  sentry-data-pv
-spec:
-  hostPath:
-    path: "/var/www/sentry/data"
-  capacity:
-    storage: 20Gi
-  accessModes:
-  - ReadWriteMany
+# ---
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name:  sentry-postgresql-pvc
+#   namespace: sentry
+# spec:
+#   resources:
+#     requests:
+#       storage: 5Gi
+#   volumeMode: Filesystem
+#   volumeName: sentry-postgresql-pv
+#   accessModes:
+#   - ReadWriteOnce
+# ---
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name:  sentry-data-pv
+# spec:
+#   hostPath:
+#     path: "/var/www/sentry/data"
+#   capacity:
+#     storage: 20Gi
+#   accessModes:
+#   - ReadWriteMany
 
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name:  sentry-data-pvc
-  namespace: sentry
-spec:
-  resources:
-    requests:
-      storage: 5Gi
-  volumeMode: Filesystem
-  volumeName: sentry-data-pv
-  accessModes:
-  - ReadWriteMany
+# ---
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name:  sentry-data-pvc
+#   namespace: sentry
+# spec:
+#   resources:
+#     requests:
+#       storage: 5Gi
+#   volumeMode: Filesystem
+#   volumeName: sentry-data-pv
+#   accessModes:
+#   - ReadWriteMany
 #######################################################
 ---
 apiVersion: v1
