@@ -904,7 +904,7 @@ ingress:
   # If you are using AWS ALB Ingress controller, switch to true if you want activate the http to https redirection.
   alb:
     httpRedirect: false
-  # annotations:
+  annotations:
   #   If you are using nginx ingress controller, please use at least those 2 annotations
   #   kubernetes.io/ingress.class: nginx
   #   nginx.ingress.kubernetes.io/use-regex: "true"
@@ -938,7 +938,7 @@ filestore:
       # storageClass: "-"
       storageClassName: ""
       accessMode: ReadWriteOnce
-      size: 10Gi
+      size: 7Gi
 
       ## Whether to mount the persistent volume to the Sentry worker and
       ## cron deployments. This setting needs to be enabled for some advanced
@@ -952,7 +952,7 @@ filestore:
 
       ## If existingClaim is specified, no PVC will be created and this claim will
       ## be used
-      existingClaim: "sentry-data-pvc"
+      existingClaim: ""
 
   gcs: {}
     ## Point this at a pre-configured secret containing a service account. The resulting
@@ -984,7 +984,7 @@ config:
     httpKeepalive: 15
 
 clickhouse:
-  enabled: false
+  enabled: true
   clickhouse:
     imageVersion: "21.8.13.6"
     configmap:
@@ -1012,12 +1012,12 @@ clickhouse:
               quota: default
 
     persistentVolumeClaim:
-      enabled: false
+      enabled: true
       dataPersistentVolume:
-        enabled: false
+        enabled: true
         accessModes:
           - "ReadWriteOnce"
-        storage: "30Gi"
+        storage: "5Gi"
 
   ## Use this to enable an extra service account
   # serviceAccount:
