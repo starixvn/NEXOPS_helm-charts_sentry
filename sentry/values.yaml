@@ -304,7 +304,7 @@ images:
 ingress:
   alb:
     httpRedirect: false
-  enabled: false
+  enabled: true
   regexPathStyle: nginx
 kafka:
   advertisedListeners: []
@@ -1480,8 +1480,8 @@ nginx:
     extraPaths: []
     extraRules: []
     extraTls: []
-    hostname: example.local
-    ingressClassName: ""
+    hostname: sentry-k8s.lumigame.com
+    ingressClassName: "haproxy"
     path: /
     pathType: ImplementationSpecific
     secrets: []
