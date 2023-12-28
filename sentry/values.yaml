@@ -305,6 +305,7 @@ ingress:
   alb:
     httpRedirect: false
   enabled: true
+  hostname: "sentry-k8s.lumigame.com"
   regexPathStyle: nginx
 kafka:
   advertisedListeners: []
