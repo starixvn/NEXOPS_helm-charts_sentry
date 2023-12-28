@@ -1506,8 +1506,8 @@ nginx:
     extraPaths: []
     extraRules: []
     extraTls: []
-    hostname: nginx.local
-    ingressClassName: ""
+    hostname: sentry-k8s.lumigame.com
+    ingressClassName: "haproxy"
     path: /
     pathType: ImplementationSpecific
     secrets: []
