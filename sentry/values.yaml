@@ -306,6 +306,7 @@ ingress:
     httpRedirect: false
   enabled: true
   hostname: "sentry-k8s.lumigame.com"
+  ingressClassName: "haproxy"
   regexPathStyle: nginx
 kafka:
   advertisedListeners: []
@@ -1481,8 +1482,8 @@ nginx:
     extraPaths: []
     extraRules: []
     extraTls: []
-    hostname: sentry-k8s.lumigame.com
-    ingressClassName: "haproxy"
+    hostname: ""
+    ingressClassName: ""
     path: /
     pathType: ImplementationSpecific
     secrets: []
@@ -1507,8 +1508,8 @@ nginx:
     extraPaths: []
     extraRules: []
     extraTls: []
-    hostname: sentry-k8s.lumigame.com
-    ingressClassName: "haproxy"
+    hostname: ""
+    ingressClassName: ""
     path: /
     pathType: ImplementationSpecific
     secrets: []
