@@ -55,10 +55,10 @@ data:
     ##########
     # Google #
     ##########
-    {{- if .Values.google.clientId }}
+    {{- if and (.Values.google.clientId) (.Values.google.clientSecret) (not .Values.google.existingSecret) }}
     auth-google.client-id: {{ .Values.google.clientId | quote }}
     auth-google.client-secret: {{ .Values.google.clientSecret | quote }}
-    {{ end }}
+    {{- end }}
 
     #########
     # Slack #
@@ -167,6 +167,11 @@ data:
             "PASSWORD": os.environ.get("POSTGRES_PASSWORD", ""),
             "HOST": {{ include "sentry.postgresql.host" . | quote }},
             "PORT": {{ template "sentry.postgresql.port" . }},
+            {{- if .Values.postgresql.enabled }}
+            "CONN_MAX_AGE": {{ .Values.postgresql.connMaxAge }},
+            {{- else }}
+            "CONN_MAX_AGE": {{ .Values.externalPostgresql.connMaxAge }},
+            {{- end }}
             {{- if .Values.externalPostgresql.sslMode }}
             'OPTIONS': {
                 'sslmode': '{{ .Values.externalPostgresql.sslMode }}',
@@ -298,6 +303,13 @@ data:
     # The digest backend powers notification summaries.
 
     SENTRY_DIGESTS = "sentry.digests.backends.redis.RedisBackend"
+
+    ###################
+    # Metrics Backend #
+    ###################
+
+    SENTRY_RELEASE_HEALTH = "sentry.release_health.metrics.MetricsReleaseHealthBackend"
+    SENTRY_RELEASE_MONITOR = "sentry.release_health.release_monitor.metrics.MetricReleaseMonitorBackend"
 
     ##############
     # Web Server #
@@ -435,7 +447,45 @@ data:
                 "organizations:metrics",
                 "organizations:metrics-extraction",
                 "organizations:transaction-metrics-extraction",
+
+                {{- if .Values.sentry.features.enableSessionReplay}}
                 "organizations:session-replay",
+                "organizations:session-replay-ui",
+                "organizations:session-replay-sdk",
+                "organizations:session-replay-count-query-optimize",
+                "organizations:session-replay-sdk-errors-only",
+                "organizations:session-replay-recording-scrubbing",
+                "organizations:session-replay-a11y-tab",
+                "organizations:session-replay-slack-new-issue",
+                "organizations:session-replay-issue-emails",
+                "organizations:session-replay-event-linking",
+                "organizations:session-replay-weekly-email",
+                "organizations:session-replay-trace-table",
+                "organizations:session-replay-rage-dead-selectors",
+                "organizations:session-replay-new-event-counts",
+                "organizations:session-replay-new-timeline",
+                "organizations:issue-details-replay-event",
+                {{ end -}}
+
+                "organizations:issue-platform",
+
+                {{- if .Values.sentry.features.enableProfiling }}
+                "organizations:profiling",
+                "organizations:profiling-ui-frames",
+                "organizations:profiling-using-transactions",
+                "organizations:profiling-beta",
+                "organizations:profiling-stacktrace-links",
+                "organizations:profiling-global-suspect-functions",
+                "organizations:profiling-cpu-chart",
+                "organizations:profiling-memory-chart",
+                "organizations:profiling-view",
+                {{ end -}}
+
+                "organizations:dashboards-mep",
+                "organizations:mep-rollout-flag",
+                "organizations:dashboards-rh-widget",
+                "organizations:metrics-extraction",
+                "organizations:transaction-metrics-extraction",
 
                 "projects:alert-filters",
                 "projects:custom-inbound-filters",
@@ -504,6 +554,14 @@ data:
     SENTRY_OPTIONS['slack.client-id'] = os.environ.get("SLACK_CLIENT_ID")
     SENTRY_OPTIONS['slack.client-secret'] = os.environ.get("SLACK_CLIENT_SECRET")
     SENTRY_OPTIONS['slack.signing-secret'] = os.environ.get("SLACK_SIGNING_SECRET")
+{{- end }}
+
+{{- if .Values.google.existingSecret }}
+    #########
+    # GOOGLE #
+    #########
+    SENTRY_OPTIONS['auth-google.client-id'] = os.environ.get("GOOGLE_AUTH_CLIENT_ID")
+    SENTRY_OPTIONS['auth-google.client-secret'] = os.environ.get("GOOGLE_AUTH_CLIENT_SECRET")
 {{- end }}
 
 {{- if .Values.github.existingSecret }}

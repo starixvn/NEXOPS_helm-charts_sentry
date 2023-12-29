@@ -77,7 +77,14 @@ spec:
         command: ["sentry"]
         args:
           - "run"
+          - "consumer"
           - "billing-metrics-consumer"
+          - "--consumer-group"
+          - "billing-metrics-consumer"
+          {{- if .Values.sentry.billingMetricsConsumer.concurrency }}
+          - "--concurrency"
+          - "{{ .Values.sentry.billingMetricsConsumer.concurrency }}"
+          {{- end }}
           {{- if .Values.sentry.billingMetricsConsumer.maxBatchSize }}
           - "--max-batch-size"
           - "{{ .Values.sentry.billingMetricsConsumer.maxBatchSize }}"
