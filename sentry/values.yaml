@@ -1462,7 +1462,7 @@ nginx:
     command:
     - sleep
     enabled: false
-  enabled: true
+  enabled: false
   existingServerBlockConfigmap: '{{ template "sentry.fullname" . }}'
   extraContainerPorts: []
   extraDeploy: []
