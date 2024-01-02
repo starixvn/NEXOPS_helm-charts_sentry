@@ -312,7 +312,7 @@ ingress:
   enabled: true
   hostname: "sentry-k8s.lumigame.com"
   ingressClassName: "haproxy"
-  regexPathStyle: nginx
+  regexPathStyle: haproxy
 kafka:
   advertisedListeners: []
   affinity: {}
