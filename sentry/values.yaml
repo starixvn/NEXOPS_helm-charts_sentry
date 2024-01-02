@@ -315,7 +315,7 @@ ingress:
   regexPathStyle: nginx
   isStable: true
   supportsIngressClassName: true
-  ingressSupportsPathType: true
+  supportsPathType: true
 kafka:
   advertisedListeners: []
   affinity: {}
