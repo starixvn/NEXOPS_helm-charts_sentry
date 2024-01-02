@@ -312,7 +312,7 @@ ingress:
   enabled: true
   hostname: "sentry-k8s.lumigame.com"
   ingressClassName: "haproxy"
-  regexPathStyle: nginx
+  #regexPathStyle: nginx
   isStable: true
   supportsIngressClassName: true
   supportsPathType: true
@@ -1470,7 +1470,7 @@ nginx:
     command:
     - sleep
     enabled: false
-  enabled: false
+  enabled: true
   existingServerBlockConfigmap: '{{ template "sentry.fullname" . }}'
   extraContainerPorts: []
   extraDeploy: []
