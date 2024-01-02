@@ -1,5 +1,6 @@
 asHook: true
 timezone: "UTC"
+#update tTZ
 auth:
   register: true
 clickhouse:
