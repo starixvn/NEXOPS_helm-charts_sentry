@@ -194,7 +194,7 @@ clickhouse:
       maxSurge: 3
       maxUnavailable: 1
       type: RollingUpdate
-  timezone: UTC
+  timezone: UTC+7
 config:
   configYml: {}
   relay: |
@@ -1655,7 +1655,7 @@ postgresql:
     logDisconnections: false
     logHostname: false
     logLinePrefix: ""
-    logTimezone: ""
+    logTimezone: "UTC+7"
     pgAuditLog: ""
     pgAuditLogCatalog: "off"
   auth:

@@ -30,7 +30,7 @@ data:
         <max_concurrent_queries>{{ .Values.clickhouse.configmap.max_concurrent_queries | default "100" }}</max_concurrent_queries>
         <uncompressed_cache_size>{{ .Values.clickhouse.configmap.uncompressed_cache_size | default "8589934592" }}</uncompressed_cache_size>
         <mark_cache_size>{{ .Values.clickhouse.configmap.mark_cache_size | default "5368709120" }}</mark_cache_size>
-        <timezone>{{ .Values.timezone | default "Asia/Shanghai" }}</timezone>
+        <timezone>{{ .Values.timezone | default "Asia/Bangkok" }}</timezone>
         <umask>{{ .Values.clickhouse.configmap.umask | default "027" }}</umask>
         <mlock_executable>{{ .Values.clickhouse.configmap.mlock_executable | default "false" }}</mlock_executable>
         {{- if .Values.clickhouse.configmap.remote_servers.enabled }}
