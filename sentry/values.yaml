@@ -30,7 +30,7 @@ clickhouse:
         level: trace
         path: /var/log/clickhouse-server
         size: 1000M
-        stdoutLogsEnabled: false
+        stdoutLogsEnabled: true
       mark_cache_size: "5368709120"
       max_concurrent_queries: "100"
       max_connections: "4096"
@@ -199,6 +199,10 @@ config:
   configYml: {}
   relay: |
     # No YAML relay config given
+    logging:
+    # Enable full logging and backraces:
+    level: trace
+    enable_backtraces: true
   sentryConfPy: |
     # No Python Extension Config Given
   snubaSettingsPy: |
