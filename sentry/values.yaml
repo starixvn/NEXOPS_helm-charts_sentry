@@ -199,11 +199,11 @@ config:
   configYml: {}
   relay: |
     # No YAML relay config given
-    Enable full logging and backraces:
     # Enable full logging and backraces:
+    logging:
       level: trace
       enable_backtraces: true
-     # 
+    # 
   sentryConfPy: |
     # No Python Extension Config Given
   snubaSettingsPy: |
